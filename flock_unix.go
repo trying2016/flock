@@ -13,11 +13,11 @@ import (
 	"syscall"
 )
 
-func (f *Flock) LockRead() error {
+func (f *Flock) RLock() error {
 	return f.lock(false, false, 0, os.SEEK_SET, 0)
 }
 
-func (f *Flock) LockWrite() error {
+func (f *Flock) Lock() error {
 	return f.lock(true, false, 0, os.SEEK_SET, 0)
 }
 
